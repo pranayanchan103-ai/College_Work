@@ -10,16 +10,16 @@ int main() {
 			}
             int count=0;
             int target;
-            int temp=0;
+            int temp=-1;
             printf("\n Enter your target element! ");
             scanf("\n %d",&target);
                 for(int i=0 ; i<n ; i++){
                     if(arr[i]==target) {
-                        count++;
                             temp=i;
-                                if(temp>=0) {
-                                    break;
+                                if(count==0) {
+                                    temp=i;
                                 }
+                                count++;
                 }
         }
             if(count==0) {
