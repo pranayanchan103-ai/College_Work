@@ -1,42 +1,31 @@
-#include <stdio.h>
-int main()
-{
-    int n, target;
-    
-    printf("Enter the size of the array: ");
-    scanf("%d", &n);
+#include<stdio.h>
+int main() {
+    int n;
+    printf("\n Enter the number of elements you want inside your array:");
+    scanf("%d",&n);
     int arr[n];
-    printf("Enter elements of the array:\n");
-    for(int i = 0; i < n; i++)
-    {
-        scanf("%d", &arr[i]);
-    }
-    printf("Enter the target element:");
-    scanf("%d", &target);
-    int temp=0;
-    int count = 0;
-    int position = 1;
-    for(int i = 0; i < n; i++)
-    {
-        if(arr[i] == target)
-        {
-            count++;
-
-            if(temp == -1)
-            {
-                position = i; 
-               int temp = i-1;
-            }
+        printf("\nEnter the elements inside your array: ");
+        for(int i=0;i<n;i++) {
+            scanf("%d",&arr[i]);
         }
-    }
-    if(count > 0)
-    {
-        printf("Number of times your target has occured: %d\n", count);
-        printf("First index where it was present %d\n", position);
-    }
-    else
-    {
-        printf("%d is not present in the array.\n", target);
-    }
-    return 0;
+            int target;
+            int count=0;
+            int temp=-1;
+            printf("\n Enter your target element:");
+            scanf("%d",&target);
+            for(int i=0;i<n;i++) {
+                if(arr[i]==target){
+                    count++;
+                        if(temp==-1) {
+                            temp=i;
+                        }
+                }
+            }
+            if(count==0) {
+                printf("\n Element was not present in the index!");
+            } else {
+                    printf("\n Element was found %d times in the array",count);
+                    printf("\n elements first index is: %d",temp);
+            }
+        return 0;
 }
